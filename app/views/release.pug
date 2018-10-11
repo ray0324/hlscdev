@@ -1,0 +1,26 @@
+extends layout.pug
+block content
+  include inc/nav.pug
+  .container
+    #releaseForm
+      .form-group.row
+        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="sysType") 系统
+        .col-sm-10
+          select#platform.form-control
+            option(value="ios") IOS
+            option(value="android") Android
+      .form-group.row
+        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="version") 版本号
+        .col-sm-10
+          input#version.form-control.form-control-lg(type="text", placeholder="v0.1.0-beta.1")
+      .form-group.row
+        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="date") 日期
+        .col-sm-10
+          input#date.form-control.form-control-lg(type="date", placeholder="请选择日期")
+      .form-group.row
+        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="qrcode") URL
+        .col-sm-10
+          input#qrcode.form-control.form-control-lg(type="url", placeholder="请输入二维码地址")
+      .row.justify-content-end
+        .col-sm-10
+          button#submit.btn.btn-lg.btn-primary(type="submit") 发布

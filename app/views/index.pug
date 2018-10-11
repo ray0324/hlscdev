@@ -1,0 +1,68 @@
+extends layout.pug
+block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+    .container
+      a.navbar-brand(href="#")
+        | HLSC-DEV
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarColor01", aria-controls="navbarColor01", aria-expanded="false", aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      #navbarColor01.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto.pull-right
+          li.nav-item.active
+            a.nav-link(href="#") 首页 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href="#") 特性
+          li.nav-item
+            a.nav-link(href="#") 关于
+          li.nav-item
+            a.nav-link(href="#") 帮助
+  .jumbotron.splash
+    .container
+      h1.display-4 华林证券APP
+      p.lead 发现新机会 开户有惊喜 轻松跟投高手
+  .container
+    ul.nav.nav-tabs
+      li.nav-item
+        a.nav-link.active.show(data-toggle="tab", href="#dev") 开发版
+      li.nav-item
+        a.nav-link(data-toggle="tab", href="#test") 测试版
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", aria-haspopup="true", aria-expanded="false") 生产版
+        .dropdown-menu(x-placement="bottom-start", style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;")
+          a.dropdown-item(href="https://itunes.apple.com/cn/app/wei-zheng-quan/id1037731696?mt=8") 苹果商店
+          .dropdown-divider
+          a.dropdown-item(href="http://a.app.qq.com/o/simple.jsp?pkgname=com.weizq") 应用宝
+          a.dropdown-item(href="http://appstore.huawei.com/app/C10457683") 华为商城
+    .tab-content
+      #dev.tab-pane.fade.active.show
+        .row
+          .col-sm
+            .group
+              .group-hd
+                h3 Android开发版
+              .group-bd
+                .item(style="display:block;")
+                  .img-qr
+                    img(src="http://113.105.85.102:7780/download/newhlzq/img/v2.2/Android_2.01_005_kf.png", alt="qr")
+                  .desc
+                    p V2.2.5
+                    p 2017-06-16
+                    p 2.2适当性特别版
+          .col-sm
+            .group
+              .group-hd
+                h3 Android开发版
+              .group-bd
+                .item(style="display:block;")
+                  .img-qr
+                    img(src="http://113.105.85.102:7780/download/newhlzq/img/v2.2/Android_2.01_005_kf.png", alt="qr")
+                  .desc
+
+      #test.tab-pane.fade
+
+block script
+  script(src="/js/jquery.min.js")
+  script(src="/js/popper.min.js")
+  script(src="/js/bootstrap.min.js")
+  script(src="/js/custom.js")
