@@ -1,12 +1,7 @@
-const Schema = require('warehouse').Schema;
-const db = require('../services/db');
+const Database = require('warehouse');
+const path = require('path');
 
-const PostSchema = new Schema({
-  title: String,
-  created: { type: Date, default: Date.now }
-});
+const DB_PATH = path.resolve('./', 'fixtures/db.json');
+const db = new Database({ path: DB_PATH });
 
-
-const Post = db.model('posts', PostSchema);
-
-module.exports = Post;
+module.exports = db;
