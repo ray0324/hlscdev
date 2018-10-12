@@ -1,12 +1,15 @@
 const Schema = require('warehouse').Schema;
 const db = require('../services/db');
 
-const PostSchema = new Schema({
-  title: String,
-  created: { type: Date, default: Date.now }
+const ReleaseSchema = new Schema({
+  system: { type: String, required: true },
+  version: { type: String, required: true },
+  date: { type: String, required: true },
+  url: { type: String, required: true },
+  desc: String
 });
 
 
-const Post = db.model('posts', PostSchema);
+const Release = db.model('posts', ReleaseSchema);
 
-module.exports = Post;
+module.exports = Release;

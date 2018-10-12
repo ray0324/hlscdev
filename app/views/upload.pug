@@ -3,10 +3,14 @@ block content
   include inc/nav.pug
   .container
     #releaseForm
-      .form-group.row
-        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="exampleInputFile") 上传文件
-        .col-sm-10
-          input#exampleInputFile.form-control-file.form-control-lg(type="file", aria-describedby="fileHelp")
-      .row.justify-content-end
-        .col-sm-10
-          <button type="submit" class="btn btn-lg btn-primary">提交</button>
+    //- form(action="/upload",method="post" enctype="multipart/form-data")
+    .form-group.row
+      label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="exampleInputFile") 上传文件
+      .col-sm-10
+        input#exampleInputFile.form-control-file.form-control-lg(type="file", name="file001" aria-describedby="fileHelp")
+    .row.justify-content-end
+      .col-sm-10
+        <button type="submit" id="post" class="btn btn-lg btn-primary">提交</button>
+block script
+  script(src="/assets/js/jquery.min.js")
+  script(src="/assets/js/app.js")
