@@ -1,6 +1,0 @@
-2018/09/21 10:25:45 [TRACE] Log Mode: File (Trace)
-2018/09/21 10:25:45 [ INFO] Gogs 0.11.53.0603
-2018/09/21 10:25:45 [ INFO] Cache Service Enabled
-2018/09/21 10:25:45 [ INFO] Session Service Enabled
-2018/09/21 10:25:45 [FATAL] [...gs/routes/install.go:66 GlobalInit()] Fail to initialize ORM engine: migrate: sync: Error 1: Can't create/write to file 'D:\xampp\mysql\tmp\#sql574_31e_2.MYI' (Errcode: 22)
- 
