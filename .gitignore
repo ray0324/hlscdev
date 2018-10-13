@@ -9,7 +9,8 @@
 # production
 /build
 /log
-
+# uploadDir
+app/public/upload
 # misc
 .DS_Store
 .env
