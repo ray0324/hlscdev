@@ -27,7 +27,7 @@ async function query (ctx, next) {
 // 查询最新的
 async function latest (ctx, next) {
   logger.info(ctx.request.query);
-  const result = await Release.find(ctx.request.query).last();
+  const result = await Release.find(ctx.request.query).sort('date', 1).last();
   logger.info(result);
   ctx.body = result || {};
 }
