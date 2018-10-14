@@ -1,22 +1,6 @@
 extends layout.pug
 block content
-  nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
-    .container
-      a.navbar-brand(href="#")
-        | HLSC-DEV
-      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarColor01", aria-controls="navbarColor01", aria-expanded="false", aria-label="Toggle navigation")
-        span.navbar-toggler-icon
-      #navbarColor01.collapse.navbar-collapse
-        ul.navbar-nav.ml-auto.pull-right
-          li.nav-item.active
-            a.nav-link(href="#") 首页 
-              span.sr-only (current)
-          li.nav-item
-            a.nav-link(href="#") 特性
-          li.nav-item
-            a.nav-link(href="#") 关于
-          li.nav-item
-            a.nav-link(href="#") 帮助
+  include inc/nav.pug
   .jumbotron.splash
     .container
       h1.display-4 华林证券APP
@@ -42,27 +26,52 @@ block content
               .group-hd
                 h3 Android开发版
               .group-bd
-                .item(style="display:block;")
-                  .img-qr
-                    img(src="http://113.105.85.102:7780/download/newhlzq/img/v2.2/Android_2.01_005_kf.png", alt="qr")
+                .android.item(style="display:block;")
+                  .android-qr-latest.img-qr
                   .desc
-                    p V2.2.5
-                    p 2017-06-16
-                    p 2.2适当性特别版
+                    p.qr-version
+                    p.qr-date
+                    p.qr-desc
           .col-sm
             .group
               .group-hd
-                h3 Android开发版
+                h3 IOS开发版
               .group-bd
-                .item(style="display:block;")
-                  .img-qr
-                    img(src="http://113.105.85.102:7780/download/newhlzq/img/v2.2/Android_2.01_005_kf.png", alt="qr")
+                .ios.item(style="display:block;")
+                  .ios-qr-latest.img-qr
                   .desc
+                    p.qr-version
+                    p.qr-date
+                    p.qr-desc
 
       #test.tab-pane.fade
+        .row
+          .col-sm
+            .group
+              .group-hd
+                h3 Android测试版
+              .group-bd
+                .android.item(style="display:block;")
+                  .android-qr-latest.img-qr
+                  .desc
+                    p.qr-version
+                    p.qr-date
+                    p.qr-desc
+          .col-sm
+            .group
+              .group-hd
+                h3 IOS测试版
+              .group-bd
+                .ios.item(style="display:block;")
+                  .ios-qr-latest.img-qr
+                  .desc
+                    p.qr-version
+                    p.qr-date
+                    p.qr-desc
 
 block script
   script(src="/assets/js/jquery.min.js")
   script(src="/assets/js/popper.min.js")
   script(src="/assets/js/bootstrap.min.js")
-  script(src="/assets/js/custom.js")
+  script(src="/assets/js/qrcode.min.js")
+  script(src="/assets/js/index.js")

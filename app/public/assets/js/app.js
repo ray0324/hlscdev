@@ -1,14 +1,14 @@
 $(function () {
-  $('#post').on('click', function () {
-    // console.log(typeof );
 
+  $.get('/latest?env=dev&system=android').then(function (res) {
+    console.log(res)
+  })
+
+  // 上传文件
+  $('#post').on('click', function () {
     let file = $('#exampleInputFile')[0].files[0];
     let data = new FormData();
-
     data.append('pic', file);
-    data.append('name', 'mypic');
-    // console.log(file);
-
     $.ajax({
       url: '/upload',
       type: 'POST',
@@ -23,4 +23,5 @@ $(function () {
       console.log(err);
     });
   });
+
 });
