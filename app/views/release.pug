@@ -4,34 +4,38 @@ block content
   .container
     #releaseForm
       .form-group.row
-        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="env") 环境
+        label.col-sm-2.col-form-label.text-right(for="env") 环境
         .col-sm-10
           select#env.form-control(name="env")
-            option(value="dev") 开发环境
             option(value="test") 测试环境
+            option(value="prod") 生产环境
       .form-group.row
-        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="system") 系统
+        label.col-sm-2.col-form-label.text-right(for="system") 系统
         .col-sm-10
           select#system.form-control(name="system")
             option(value="ios") IOS
             option(value="android") Android
       .form-group.row
-        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="version") 版本号
+        label.col-sm-2.col-form-label.text-right(for="version") 版本号
         .col-sm-10
-          input#version.form-control.form-control-lg(type="text",name="version" placeholder="v0.1.0-beta.1")
+          input#version.form-control(type="text",name="version" placeholder="v0.1.0-beta.1")
       .form-group.row
-        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="date") 日期
+        label.col-sm-2.col-form-label.text-right(for="date") 日期
         .col-sm-10
-          input#date.form-control.form-control-lg(type="date",name="date" placeholder="请选择日期")
+          input#date.form-control(type="date",name="date" placeholder="请选择日期")
       .form-group.row
-        label.col-sm-2.col-form-label.col-form-label-lg.text-right(for="url") URL
+        label.col-sm-2.col-form-label.text-right(for="url") URL
         .col-sm-10
-          input#url.form-control.form-control-lg(type="url",name="url" placeholder="请输入二维码地址")
+          input#url.form-control(type="url",name="url" placeholder="请输入二维码地址")
+      .form-group.row
+        label.col-sm-2.col-form-label.text-right(for="url") 描述
+        .col-sm-10
+          input#desc.form-control(type="text",name="desc" placeholder="描述")
       .row.justify-content-end
         .col-sm-10
           button#submit.btn.btn-lg.btn-primary(type="submit") 发布
 
 block script
-  script(src="/assets/js/jquery.min.js")
-  script(src="/assets/js/bootstrap.min.js")
+  script(src="/lib/jquery.min.js")
+  script(src="/lib/bootstrap.min.js")
   script(src="/assets/js/release.js")

@@ -2,11 +2,11 @@ const log4js = require('log4js');
 const conf = require('../conf');
 log4js.configure({
   appenders: {
-    out: { type: 'stdout' },
+    stdout: { type: 'stdout' },
     app: { type: 'dateFile', filename: './log/app.log' }
   },
   categories: {
-    default: { appenders: ['out'], level: conf.LOG_LEVEL }
+    default: { appenders: ['stdout'], level: conf.LOG_LEVEL }
   }
 });
 

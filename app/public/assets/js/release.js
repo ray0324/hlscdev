@@ -5,21 +5,16 @@ $(function () {
     var version = $('#version').val();
     var date = $('#date').val();
     var url = $('#url').val();
-    console.log({
-      env: env,
-      system: system,
-      version: version,
-      date: date,
-      url:url
-    })
+    var desc = $('#desc').val();
     $.post('/release', {
       env: env,
       system: system,
       version: version,
       date: date,
-      url: url
+      url: url,
+      desc: desc
     }).then(function (res) {
-      console.log(res);
+      alert(res)
     })
 
   })

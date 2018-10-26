@@ -1,23 +1,31 @@
-$(function () {
-  function mkqrcode(env,system) {
+function queryList(env, system) {
+  $.get('/query?env=' + env + '&system=' + system).then(function (res) {
+    if (res.length < 1) return;
+    var str = res.data.map(function (item) {
+      return '<option value="' + btoa(JSON.stringify(item)) + '">' + item.date + '</option>';
+    }).join('');
 
-    var qrDom = document.querySelector('#' + env + ' .' + system+'-qr-latest');
-    var qrcode = new QRCode(qrDom, {
-      width: 100,
-      height: 100
-    });
+    $('#' + system + '-' + env + '').html(str);
+    var qrDom = document.querySelector('#' + system + '-' + env + '-qr');
+    var qrcode = new QRCode(qrDom, { width: 140, height: 140 });
+    qrcode.makeCode(res.data[0].url);
 
-    $.get('/latest?env='+env+'&system='+system).then(function (res) {
-      qrcode.makeCode(res.url);
-      $('#' + env + ' .' + system + ' .qr-version').text(res.version);
-      $('#' + env + ' .' + system + ' .qr-date').text(res.date);
-      $('#' + env + ' .' + system + ' .qr-desc').text(res.desc);
+    var desc = res.data[0].version + '<br>' + res.data[0].system + '<br>' + (res.data[0].desc||'');
+
+    $('#' + system + '-' + env + '-desc').html(desc);
+
+    $('#' + system + '-' + env + '').on('change', function (e) {
+      var item = JSON.parse(atob(e.target.value));
+      var desc = item.version + '<br>' + item.system +'<br>'+ (item.desc||'');
+      $('#' + system + '-' + env + '-desc').html(desc);
+      qrcode.makeCode(item.url);
     })
-  }
+  })
+}
 
-  mkqrcode('dev','android');
-  mkqrcode('dev', 'ios');
-
-  mkqrcode('test', 'android');
-  mkqrcode('test', 'ios');
-});
+$(document).ready(function () {
+  queryList('test', 'android');
+  queryList('test', 'ios');
+  queryList('prod', 'android');
+  queryList('prod', 'ios');
+})

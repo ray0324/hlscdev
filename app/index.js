@@ -2,9 +2,8 @@ const Koa = require('koa');
 const koaStatic = require('koa-static');
 const views = require('koa-views');
 const koaBody = require('koa-body');
-// const path = require('path');
 const onerror = require('./middlewares/onerror');
-const routes = require('./routes');
+const router = require('./router');
 const db = require('./services/db');
 
 db.load().then(() => {
@@ -32,6 +31,6 @@ app.use(koaBody({
 
 app.use(koaStatic(__dirname + '/public'));
 app.use(views(__dirname + '/views', { extension: 'pug' }));
-app.use(routes.routes(), routes.allowedMethods());
+app.use(router.routes(), router.allowedMethods());
 
 module.exports = app;

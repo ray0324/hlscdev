@@ -8,70 +8,66 @@ block content
   .container
     ul.nav.nav-tabs
       li.nav-item
-        a.nav-link.active.show(data-toggle="tab", href="#dev") 开发版
+        a.nav-link.active.show(data-toggle="tab", href="#test") 测试版
       li.nav-item
-        a.nav-link(data-toggle="tab", href="#test") 测试版
+        a.nav-link(data-toggle="tab", href="#prod") 生产版
       li.nav-item.dropdown
-        a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", aria-haspopup="true", aria-expanded="false") 生产版
-        .dropdown-menu(x-placement="bottom-start", style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;")
+        a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", role="button", aria-haspopup="true", aria-expanded="false") 应用商店
+        .dropdown-menu
           a.dropdown-item(href="https://itunes.apple.com/cn/app/wei-zheng-quan/id1037731696?mt=8") 苹果商店
           .dropdown-divider
           a.dropdown-item(href="http://a.app.qq.com/o/simple.jsp?pkgname=com.weizq") 应用宝
           a.dropdown-item(href="http://appstore.huawei.com/app/C10457683") 华为商城
     .tab-content
-      #dev.tab-pane.fade.active.show
+      #test.tab-pane.fade.active.show
         .row
           .col-sm
-            .group
-              .group-hd
-                h3 Android开发版
-              .group-bd
-                .android.item(style="display:block;")
-                  .android-qr-latest.img-qr
-                  .desc
-                    p.qr-version
-                    p.qr-date
-                    p.qr-desc
+            .card
+              .card-body
+                h4.card-title Android测试版本
+                .row.mt-4
+                  .col-sm-4
+                    div#android-test-qr.qr-code
+                  .col-sm-8
+                    select#android-test.custom-select
+                    p#android-test-desc
           .col-sm
-            .group
-              .group-hd
-                h3 IOS开发版
-              .group-bd
-                .ios.item(style="display:block;")
-                  .ios-qr-latest.img-qr
-                  .desc
-                    p.qr-version
-                    p.qr-date
-                    p.qr-desc
+            .card
+              .card-body
+                h4.card-title IOS测试版本
+                .row.mt-4
+                  .col-sm-4
+                    div#ios-test-qr.qr-code
+                  .col-sm-8
+                    select#ios-test.custom-select
+                    p#ios-prod-desc
 
-      #test.tab-pane.fade
+      #prod.tab-pane.fade
         .row
           .col-sm
-            .group
-              .group-hd
-                h3 Android测试版
-              .group-bd
-                .android.item(style="display:block;")
-                  .android-qr-latest.img-qr
-                  .desc
-                    p.qr-version
-                    p.qr-date
-                    p.qr-desc
+            .card
+              .card-body
+                h4.card-title Android测试版本
+                .row.mt-4
+                  .col-sm-4
+                    div#android-prod-qr.qr-code
+                  .col-sm-8
+                    select#android-prod.custom-select
+                    p#android-prod-desc
           .col-sm
-            .group
-              .group-hd
-                h3 IOS测试版
-              .group-bd
-                .ios.item(style="display:block;")
-                  .ios-qr-latest.img-qr
-                  .desc
-                    p.qr-version
-                    p.qr-date
-                    p.qr-desc
+            .card
+              .card-body
+                h4.card-title IOS测试版本
+                .row.mt-4
+                  .col-sm-4
+                    div#ios-prod-qr.qr-code
+                  .col-sm-8
+                    select#ios-prod.custom-select
+                    p#ios-prod-desc
 
 block script
-  script(src="/assets/js/jquery.min.js")
-  script(src="/assets/js/popper.min.js")
-  script(src="/assets/js/bootstrap.min.js")
-  script(src="/assets/js/qrcode.min.js")
+  script(src="/lib/jquery.min.js")
+  script(src="/lib/popper.min.js")
+  script(src="/lib/bootstrap.min.js")
+  script(src="/lib/qrcode.min.js")
   script(src="/assets/js/index.js")

@@ -185,6 +185,10 @@ commander@*, commander@^2.11.0:
   version "2.19.0"
   resolved "http://registry.npm.taobao.org/commander/download/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
 
+component-type@1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.taobao.org/component-type/download/component-type-1.2.1.tgz#8a47901700238e4fc32269771230226f24b415a9"
+
 condense-newlines@^0.2.1:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/condense-newlines/download/condense-newlines-0.2.1.tgz#3de985553139475d32502c83b02f60684d24c55f"
@@ -312,6 +316,10 @@ editorconfig@^0.15.0:
 ee-first@1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+
+eivindfjeldstad-dot@0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/eivindfjeldstad-dot/download/eivindfjeldstad-dot-0.0.1.tgz#22fc976bfaf306e0839a31db8e8213480fafb893"
 
 error-inject@^1.0.0:
   version "1.0.0"
@@ -1016,6 +1024,10 @@ type-is@^1.6.14, type-is@^1.6.16:
     media-typer "0.3.0"
     mime-types "~2.1.18"
 
+typecast@0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/typecast/download/typecast-0.0.1.tgz#fffb75dcb6bdf1def8e293b6b6e893d6c1ed19de"
+
 uglify-js@^2.6.1:
   version "2.8.29"
   resolved "http://registry.npm.taobao.org/uglify-js/download/uglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
@@ -1044,6 +1056,14 @@ urijs@^1.19.0:
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+validate@^4.5.1:
+  version "4.5.1"
+  resolved "http://registry.npm.taobao.org/validate/download/validate-4.5.1.tgz#ba36b8450b4bad4ccf52d666ba80abb2c01cace2"
+  dependencies:
+    component-type "1.2.1"
+    eivindfjeldstad-dot "0.0.1"
+    typecast "0.0.1"
 
 vary@^1.1.2:
   version "1.1.2"

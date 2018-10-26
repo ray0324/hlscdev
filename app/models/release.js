@@ -11,6 +11,6 @@ const ReleaseSchema = new Schema({
 });
 
 
-const Release = db.model('posts', ReleaseSchema);
+const Release = db.model('release', ReleaseSchema);
 
 module.exports = Release;
