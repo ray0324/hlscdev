@@ -9,7 +9,7 @@ async function showUpload (ctx, next) {
 
 async function doUpload (ctx, next) {
   const files = ctx.request.files;
-  let result = {};
+  const result = {};
   await Promise.all(Object.keys(files).map(key => {
     const file = files[key];
     const src = fs.createReadStream(file.path);
