@@ -23,7 +23,6 @@ app.use(onerror);
 app.use(koaBody({
   multipart: true,
   formidable: {
-    // uploadDir: path.join(__dirname, 'public/upload/'),
     hash: 'md5',
     maxFileSize: 200 * 1024 * 1024 // 设置上传文件大小最大限制，默认2M
   }

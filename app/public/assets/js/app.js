@@ -12,7 +12,7 @@ $(function () {
       contentType: false,
       dataType: 'json'
     }).then(res=>{
-      alert('????')
+      alert('上传成功！')
     }).catch(err=>{
       console.log(err);
     });
