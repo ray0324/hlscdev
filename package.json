@@ -16,7 +16,7 @@
     "koa-static": "^5.0.0",
     "koa-views": "^6.1.4",
     "log4js": "^3.0.6",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "pug": "^2.0.3",
     "validate": "^4.5.1",
     "warehouse": "^2.2.0"
